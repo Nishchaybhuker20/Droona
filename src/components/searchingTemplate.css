@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.top-container {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+.containers {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.block {
+  height: 45px;
+  width: 45px;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 20px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+}
+
+.cells {
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  color: black;
+  flex-wrap: wrap;
+  font-size: 20px;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 0;
+  outline: 0;
+  margin: 20px 30px;
+  font-weight: bold;
+  background: rgb(13 193 160);
+  color: aliceblue;
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.source:hover,
+.source:focus {
+  transform: scale(0.9);
+  background: coral;
+}
+
+.dest:hover,
+.dest:visited {
+  /* border-radius: 23px; */
+  background: deeppink;
+  transform: scale(0.9);
+  /* color: rgb(8, 8, 8); */
+}
+
+.blocked:hover,
+.blocked:visited {
+  /* border-radius: 23px; */
+  background: black;
+  transform: scale(0.9);
+  /* color: rgb(8, 8, 8); */
+}
+
+.submit:visited,
+.submit:hover {
+  /* border-radius: 23px; */
+  background: rgb(21, 88, 175);
+  transform: scale(0.9);
+  /* color: rgb(0, 0, 0); */
+}

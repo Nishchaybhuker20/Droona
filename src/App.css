@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* Header */
+.header_content {
+  background: url("../public/bg4.gif") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  flex-direction: column;
+}
+
+.header_content h1 {
+  font-size: 8rem;
+  font-weight: bolder;
+}
+.header_content h2 {
+  font-size: 3rem;
+  font-weight: bolder;
+}
+.header_content .btn {
+  /* margin-top: 2rem; */
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  background: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+
+/* Scroll Down */
+
+.scroll-container {
+    bottom: 8%;
+    left: 49%;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    /* border: 2px solid white; */
+}
+
+.chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #fff;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+    25% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    67% {
+        opacity: 1;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+}
+
+.text {
+    display: block;
+    margin-top: 75px;
+    margin-left: -30px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+    }
+}
+
+.main-container{
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    display: flex;
+}
+
+/* ============================================= */
+/* Tabs */
+/* ============================================= */
+
+.tabs{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background: #07080d;
+}
+
+.tab{
+    width: 80%;
+    background: #212121;
+    color: white;
+    padding: 1rem 2rem;
+    margin: 2rem;
+    font-size: 25px;
+    box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.3);
+}
+.tab.active{
+    border-left: 4px solid goldenrod;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* ============================================= */
+/* Searching */
+/* ============================================= */
+
+ .sub-container {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0;
+    border-left: 2px solid white;
+    padding-left: 7rem;
+    padding-top: 6rem;
+    width: 80%;
+    overflow: hidden;
+}
+
+.cell {
+    -webkit-box-flex: 0;
+    flex: 0 1 250px;
+    width: 250px;
+    height: 137.5px;
+    margin: 65.4px 12.5px 25px;
+    position: relative;
+    padding: 0.5em;
+    z-index: 1;
+    transition: all 0.6s;
+    box-shadow: 0px 27px 55px 0 rgba(0, 0, 0, 0.3),0px 17px 17px 0px rgba(0,0,0,0.15);
+}
+
+.cell_title {
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-break: break-word;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: opacity 350ms;
+    text-align: center;
+}
+
+.cell::before,
+.cell::after {
+    content: '';
+}
+
+.cell::before,
+.cell::after,
+.cell_img {
+    background: #1e1d1d;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    display: block;
+    position: absolute;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: -1;
+    background: red;
+    background: linear-gradient('#da1bd2 ,#34a0f3, #a943dc ,#30a3f4');
+    background: linear-gradient(45deg, #da1bd2, #34a0f3),linear-gradient(142deg, #a943dc, #30a3f4);
+}
+.cell-child{
+    position: absolute;
+    width: 97%;
+    height: 193%;
+    top: -64px;
+    left: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: normal;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: black;
+}
+
+.cell_box{
+    position: absolute;
+    width: 87%;
+    height: 83%;
+    top: 26px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-wrap: normal;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: #2a2422;
+}
+.cell::before {
+    background: #fff;
+}
+
+.cell::before {
+    background: #111111;
+    opacity: 0.7;
+    transform: opacity 350ms;
+    -webkit-transition: opacity 350ms;
+}
+
+.cell:hover .cell_img {
+    filter: grayscale(0%);
+}
+
+.cell:hover::before {
+    background: white;
+    color: black !important;
+}
+.cell:hover::after {
+    opacity: 0;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    width: 250px;
+    margin: 0 12.5px;
+}
+
+a:nth-child(4){
+    position: relative;
+    top: 14.3rem;
+    left: -25.7rem;
+}
+a:nth-child(5) {
+    position: relative;
+    top: -6rem;
+    left: -17rem;
+    /* top: -8rem; */
+}
